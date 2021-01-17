@@ -1,0 +1,10 @@
+{
+  "name": "switch-tracker",
+  "version": "0.1.0",
+  "description": "Extract switch playtime from the Switch Parental Controls app",
+  "main": "index.js",
+  "repository": "git@github.com:andreterron/switch-tracker.git",
+  "author": "Andre Terron <git@terron.me>",
+  "license": "MIT",
+  "private": false
+}
