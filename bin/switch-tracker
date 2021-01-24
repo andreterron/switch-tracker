@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-var { resolve } = require('path')
-
 function parseArgumentsIntoOptions(rawArgs) {
     var args = require('arg')(
         {
@@ -24,4 +22,11 @@ var args = parseArgumentsIntoOptions(process.argv)
 
 require('../index.js')
     .getSwitchPlayTime(args)
-    .then(console.log, console.error)
+    .then(
+        data => {
+            console.log(JSON.stringify(data, null, 2))
+        },
+        error => {
+            console.error(error)
+        }
+    )
