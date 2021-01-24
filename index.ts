@@ -1,5 +1,5 @@
 import { exec, ExecOptions } from "child_process"
-import { join } from "path"
+import { join, resolve } from "path"
 import { evaluateXPath, evaluateXPathToNodes, evaluateXPathToString } from "fontoxpath"
 import { Node } from "slimdom"
 import { async as parseXmlAsync } from "slimdom-sax-parser"
@@ -222,7 +222,8 @@ export function inferDateFromList(days: SwitchDayListItem[]): SwitchGameDay[] {
 }
 
 export async function getSwitchPlayTime(options: Partial<SwitchTrackerOptions> = {}) {
-    const { pages, xmlFile } = Object.assign({}, DEFAULT_OPTIONS, options)
+    const pages = options.pages || DEFAULT_OPTIONS.pages
+    const xmlFile = resolve(options.xmlFile || DEFAULT_OPTIONS.xmlFile)
     const size = await android.getScreenSize()
     await android.unlockPhone()
     await android.openAppFresh()

@@ -16,7 +16,7 @@ function parseArgumentsIntoOptions(rawArgs) {
     );
     return {
         pages: args['--pages'] || undefined,
-        xmlFile: args['--xml-file'] ? resolve(args['--xml-file']) : undefined
+        xmlFile: args['--xml-file'] || undefined
     };
 }
 
