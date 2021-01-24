@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var { resolve } = require('path')
+
+function parseArgumentsIntoOptions(rawArgs) {
+    var args = require('arg')(
+        {
+            '--pages': Number,
+            '--xml-file': String,
+            '-p': '--pages',
+            '-f': '--xml-file'
+        },
+        {
+            argv: rawArgs.slice(2),
+        }
+    );
+    return {
+        pages: args['--pages'] || undefined,
+        xmlFile: args['--xml-file'] ? resolve(args['--xml-file']) : undefined
+    };
+}
+
+var args = parseArgumentsIntoOptions(process.argv)
+
+require('../index.js')
+    .getSwitchPlayTime(args)
+    .then(console.log, console.error)
