@@ -1,10 +1,33 @@
 {
-  "name": "switch-tracker",
-  "version": "0.1.0",
-  "description": "Extract switch playtime from the Switch Parental Controls app",
-  "main": "index.js",
-  "repository": "git@github.com:andreterron/switch-tracker.git",
-  "author": "Andre Terron <git@terron.me>",
-  "license": "MIT",
-  "private": false
+    "name": "switch-tracker",
+    "version": "0.1.0",
+    "description": "Extract switch playtime from the Switch Parental Controls app",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "repository": "git@github.com:andreterron/switch-tracker.git",
+    "author": "Andre Terron <git@terron.me>",
+    "license": "MIT",
+    "private": false,
+    "files": [
+        "index.js",
+        "index.d.ts"
+    ],
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.21",
+        "typescript": "^4.1.3"
+    },
+    "dependencies": {
+        "fontoxpath": "^3.14.2",
+        "slimdom": "^2.3.2",
+        "slimdom-sax-parser": "^1.4.0"
+    },
+    "keywords": [
+        "switch",
+        "track",
+        "tracking",
+        "adb"
+    ]
 }
