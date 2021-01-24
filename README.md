@@ -42,7 +42,7 @@ printPlayTime()
 
 ## Example output:
 
-```json
+```js
 [
   {
     "dateString": "Today",
